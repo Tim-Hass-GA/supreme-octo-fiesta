@@ -24,6 +24,7 @@ function myNew(constructor){
   Object.setPrototypeOf(obj, constructor.prototype) // 2 set prototype
   ///////////// arguments keyword
   // console.log(arguments, arguments.length)
+
   // convert to an array in order to use slice
   // let argsArray = Array.from(arguments) // after es6...
   // console.log(argsArray.slice(1))
@@ -34,7 +35,7 @@ function myNew(constructor){
   // constructor.apply(obj, argsArray.slice(1)) // 3 execute constructor with 'this'
   // return obj // 4 return object
 
-  // for edge case
+  // for edge case 3 && 4 combined
   return constructor.apply(obj, argsArray.slice(1)) || obj
 }
 const timmy = myNew(Person, 'another person timmy')
